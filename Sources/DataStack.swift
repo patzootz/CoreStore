@@ -466,7 +466,7 @@ public final class DataStack: Equatable {
     internal let rootSavingContext: NSManagedObjectContext
     internal let mainContext: NSManagedObjectContext
     internal let schemaHistory: SchemaHistory
-    internal let childTransactionQueue = DispatchQueue.serial("com.coreStore.dataStack.childTransactionQueue", qos: .utility)
+    internal let childTransactionQueue = DispatchQueue.serial("com.coreStore.dataStack.childTransactionQueue", qos: .userInitiated)
     internal let storeMetadataLock: NSRecursiveLock = .init()
     internal let migrationQueue: OperationQueue = Internals.with {
         
